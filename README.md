@@ -36,7 +36,7 @@ local events = {
 local watched = table_watcher.watch(data, events)
 ```
 ## Limitations
-Any event can be prevented from trigger using `setraw` and `getraw`.
+Any event can be prevented from trigger using `rawset` and `rawget`.
 As such, functions from the table library may not work due to the use of theses function to interface with tables.
 
 ## Functions
