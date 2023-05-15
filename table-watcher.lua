@@ -3,7 +3,7 @@
     version = "1.0.0"
     dependencies = {}
     description = "An event based table watcher"
-    tags = { ""table", "watcher", "observe", "event" }
+    tags = { "table", "watcher", "observe", "event" }
     license = "MIT"
     author = { name = "lilevil"}
     homepage = "https://github.com/lil-evil/table-watcher"
