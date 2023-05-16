@@ -1,6 +1,6 @@
   --[[lit-meta
     name = "lil-evil/table-watcher"
-    version = "1.0.0"
+    version = "1.0.1"
     dependencies = {}
     description = "An event based table watcher"
     tags = { "table", "watcher", "observe", "event" }
