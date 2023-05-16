@@ -31,7 +31,7 @@ local data = {1,2,3}
 
 local events = {
     get = function(self, key) print("access to ".. key) end,
-    set = function(self, value) print("set "..key.." to "..value) end
+    set = function(self, key, value) print("set "..key.." to "..value) end
 }
 local watched = table_watcher.watch(data, events)
 ```
