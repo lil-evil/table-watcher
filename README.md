@@ -1,6 +1,6 @@
 # Table-watcher
 
-table-watcher is a Lua library that allows you to observe changes on a table.
+a Lua library that allows you to observe changes on a table and more.
 
 
 ## Summary
@@ -39,6 +39,8 @@ local watched = table_watcher.watch(data, events)
 Any event can be prevented from trigger using `rawset` and `rawget`.
 As such, functions from the table library may not work due to the use of theses function to interface with tables.
 
+A benchmark can be done with [examples/benchmark.lua](examples/benchmark.lua).
+
 ## Functions
 
 ### `watcher.watch (data, events)`
@@ -48,11 +50,9 @@ Watch a table for gets and sets.
 **Parameters:**
 
 - `data` (table): Table to watch.
-- `events` (table): List of events to interact with.
-  - `get` (function): Triggered when accessing a field.
-  - `set` (function): Triggered when setting a field.
-  - `fget` (function): Same as `get`. When returning true, the property returned is any. [Example](./examples/filters.lua).
-  - `fset` (function): Same as `set`. When returning false, blocks the set of the field. [Example](./examples/filters.lua)
+- `events` (table): List of events to interact with. ([Example](examples/events.lua))
+  - `get` (function(table, key, self)): Triggered when accessing a field.
+  - `set` (function(table, key, value, self)): Triggered when setting a field.
 
 **Returns:**
 
