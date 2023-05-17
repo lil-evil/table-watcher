@@ -20,7 +20,7 @@ local watched = table_watcher.watch(dummy, events)
 local _started = hrtime()
 
 local min, max, values = 0, 0, {}
-local iterations = 10000
+local iterations = 1000000
 
 print"== starting benchmark =="
 print("Doing " .. iterations .. " iterations for each test." )

@@ -34,6 +34,26 @@ local events = {
     set = function(self, key, value) print("set "..key.." to "..value) end
 }
 local watched = table_watcher.watch(data, events)
+
+-- Access a value (triggers the get event)
+local value = watched.key
+
+-- Modify a value (triggers the set event)
+watched.key = newValue
+
+-- Create a clone of the watched table without triggering events
+local clonedTable = watcher.unwatch(watched, true)
+watched.key = newValue      -- still trigger
+clonedTable.key = newValue  -- won't trigger
+
+-- Destroy the watched table and restore the original table
+local restoredTable = watcher.destroy(watched)
+-- none will trigger
+watched.key = newValue
+restoredTable.key = newValue
+
+-- Check if a table is being watched
+local isWatched = watcher.is_watched(watched)
 ```
 ## Limitations
 Any event can be prevented from trigger using `rawset` and `rawget`.
